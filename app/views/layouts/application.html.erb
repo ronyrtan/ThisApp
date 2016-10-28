@@ -8,23 +8,28 @@
 </head>
 <body>
   <nav>
-      <div class="navbar">
-        <div class="navleft">
-          <%= link_to "Home", root_path, :class => 'nav' %>
-          <% if @current_user.present? %>
-            <%= link_to "Profile", user_path(@current_user) %>
-        </div>
-        <div class="navright">
-            <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete' %>
-          <% else %>
-            <%= link_to 'Sign in', login_path %>
-            <%= link_to 'Sign up', new_user_path %>
-        </div>
-          <% end %>
+    <div class="navbar">
+      <div class="navleft">
+        <%= link_to "Home", root_path, :class => 'nav' %>
+        <% if @current_user.present? %>
+          <%= link_to "Profile", user_path(@current_user) %>
+          <%= link_to "Items", items_path %>
+        <% end %>
       </div>
-    </nav>
+      <div class="navright">
+        <% if @current_user.present? %>
+          <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :class => "logoutButton" %>
+        <% else %>
+          <%= link_to 'Sign in', login_path, :class => "signInOutButton" %>
+          <%= link_to 'Sign up', new_user_path, :class => "signInOutButton"  %>
+      </div>
+        <% end %>
+    </div>
+  </nav>
+  <div class="container">
 
-<%= yield %>
+    <%= yield %>
 
+  </div>
 </body>
 </html>

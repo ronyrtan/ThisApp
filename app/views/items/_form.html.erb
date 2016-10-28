@@ -1,0 +1,33 @@
+<%= form_for(@item) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :class => 'itemForm', :placeholder => 'name' %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price, :class => 'itemForm', :placeholder => 'price' %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, :class => 'itemForm', :placeholder => 'description' %>
+  </div>
+  <div class="field">
+    <%= f.label :colour %><br>
+    <%= f.text_field :colour, :class => 'itemForm', :placeholder => 'colour' %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size, :class => 'itemForm', :placeholder => 'size' %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand, :class => 'itemForm', :placeholder => 'brand' %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category, :class => 'itemForm', :placeholder => 'category' %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => 'itemButton' %>
+  </div>
+<% end %>

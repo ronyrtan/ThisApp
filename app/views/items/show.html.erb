@@ -1,2 +1,8 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1>Items show</h1>
+
+<%= @item.name %>
+
+<div class="controller">
+<%= link_to 'edit', edit_item_path%> |
+<%= link_to 'destroy', @item, method: :delete %>
+</div>

@@ -3,7 +3,7 @@ User.destroy_all
 u1 = User.create :name => "Cedric", :email => "cedric@gmail.com", :password => "chicken"
 u2 = User.create :name => "Loui", :email => "loui@gmail.com", :password => "chicken"
 u3 = User.create :name => "Tony", :email => "tony@gmail.com", :password => "chicken"
-u4 = User.create :name => "Ron", :email => "ron@gmail.com", :password => "chicken"
+u4 = User.create :name => "Ron", :email => "ron@gmail.com", :password => "chicken", :admin => true
 
 Item.destroy_all
 

@@ -1,19 +1,20 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 /*/// NAVBAR ///*/
 
 nav {
   height: 50px;
+  line-height: 50px;
 }
 
 nav a {
   text-decoration: none;
   font-size: 18px;
 }
-
 
 .navbar {
   height: 50px;
@@ -23,14 +24,14 @@ nav a {
 .navleft {
   display: inline-block;
   position: relative;
-  width: 100px;
+  width: 200px;
   line-height: 50px;
 }
 
 .navright {
   display: inline-block;
   position: relative;
-  width: 100px;
+  width: 200px;
   float: right;
   line-height: 50px;
 }

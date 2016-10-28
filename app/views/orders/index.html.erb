@@ -1,2 +1,8 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<% if @current_user.present? && @current_user.admin? %>
+  <h1>Orders index</h1>
+
+  <% @orders.each do |o| %>
+    <%= link_to o.user.name, order_path(o) %>
+    <!-- <p><%= o.line_items.first.item.name %></p> -->
+  <% end %>
+<% end %>

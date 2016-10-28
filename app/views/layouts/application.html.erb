@@ -14,6 +14,9 @@
         <% if @current_user.present? %>
           <%= link_to "Profile", user_path(@current_user) %>
           <%= link_to "Items", items_path %>
+          <% if @current_user.admin? %>
+            <%= link_to "Orders", orders_path %>
+          <% end %>
         <% end %>
       </div>
       <div class="navright">

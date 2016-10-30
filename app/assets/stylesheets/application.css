@@ -188,4 +188,43 @@ body {
   display: inline-block;
 }
 
-/*///  ///*/
+/*/// ITEMS PAGE ///*/
+
+.categorySearchContainer {
+  width: 150px;
+  height: 500px;
+  border: 1px solid lightgray;
+  display: inline-block;
+  position: relative;
+  border-radius: 2px;
+}
+
+.imageIndexContainer {
+  width: 800px;
+  /*border: 1px solid lightgray;*/
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 2px;
+}
+
+.imageIndex {
+  list-style: none;
+}
+
+.imageIndex a {
+  text-decoration: none;
+  color: gray;
+}
+
+.imageIndex li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.imageIndexThumb img {
+  height: 250px;
+  width: 250px;
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}

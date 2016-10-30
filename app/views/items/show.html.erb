@@ -1,6 +1,10 @@
 <h1>Items show</h1>
 
-<%= @item.name %>
+<%= image_tag @item.image %>
+<p>
+  <%= @item.name %>
+</p>
+
 
 <% if @current_user.present? && @current_user.admin? %>
   <div class="controller">

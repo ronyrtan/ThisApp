@@ -17,6 +17,8 @@ LineItem.destroy_all
 l1 = LineItem.create :quantity => 3
 l2 = LineItem.create :quantity => 1
 l3 = LineItem.create :quantity => 2
+l4 = LineItem.create :quantity => 2
+l5 = LineItem.create :quantity => 2
 
 
 Cart.destroy_all
@@ -40,8 +42,8 @@ l2.item = i1
 l3.item = i2
 
 o1.line_items << l1 << l2 << l3
-o2.line_items << l2
-o3.line_items << l3
+o2.line_items << l4
+o3.line_items << l5
 
 u1.orders << o1
 u2.orders << o2

@@ -73,6 +73,10 @@ nav a {
 .signInOutButton {
   border: 1px solid lightblue;
   padding: 5px;
+  height: 25px;
+  margin-top: 5px;
+  line-height: 25px;
+  display: inline-block;
   border-radius: 3px;
   color: lightblue;
   transition: all .2s ease;
@@ -118,7 +122,7 @@ body {
 }
 
 .signInUpFormButton {
-  height: 40px;
+  height: 25px;
   width: 212px;
   padding: 5px;
   border: 1px solid lightblue;

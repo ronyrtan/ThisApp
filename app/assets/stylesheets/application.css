@@ -228,3 +228,29 @@ body {
   border: 1px solid lightgray;
   border-radius: 3px;
 }
+
+.imageIndex .addToCartButton, .addToCartButton {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: lightblue;
+  transition: all .3s ease;
+}
+
+.imageIndex .addToCartButton:hover, .addToCartButton:hover {
+  color: lightblue;
+  background-color: white;
+  border: 1px solid lightblue;
+}
+
+.itemInfoContainer {
+  width: 260px;
+  display: inline-block;
+  position: relative;
+  height: 316px;
+  vertical-align: top;
+  margin-bottom: 10px;
+}

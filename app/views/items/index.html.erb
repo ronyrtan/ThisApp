@@ -2,17 +2,30 @@
 
 <div class="categorySearchContainer">
   Search By Category.
+  <% @items.pluck('category').uniq.each do |c| %>
+    <p>
+      <%= link_to c, items_show_category_path(c) %>
+    </p>
+  <% end %>
 </div>
 
 <div class="imageIndexContainer">
   <ul class="imageIndex">
     <% @items.each do |i| %>
+    <div class=itemInfoContainer>
       <li>
         <%= link_to (image_tag i.image), item_path(i), :alt => 'i.name', :class => 'imageIndexThumb' %>
         <p>
           <%= link_to i.name, item_path(i) %>
         </p>
+        <p>
+          <%= number_to_currency(i.price) %>
+        </p>
+        <p>
+          <%= link_to 'Add to cart', items_path, :class => 'addToCartButton' %>
+        </p>
       </li>
+    </div>
     <% end %>
   </ul>
 </div>

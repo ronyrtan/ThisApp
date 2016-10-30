@@ -4,6 +4,12 @@
 <p>
   <%= @item.name %>
 </p>
+<p>
+  <%= number_to_currency(@item.price) %>
+</p>
+<p>
+  <%= link_to 'Add to cart', items_path, :class => 'addToCartButton' %>
+</p>
 
 <% if @current_user.present? && @current_user.admin? %>
   <div class="controller">

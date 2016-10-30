@@ -17,8 +17,9 @@ LineItem.destroy_all
 l1 = LineItem.create :quantity => 3
 l2 = LineItem.create :quantity => 1
 l3 = LineItem.create :quantity => 2
-l4 = LineItem.create :quantity => 2
-l5 = LineItem.create :quantity => 2
+l4 = LineItem.create :quantity => 3
+l5 = LineItem.create :quantity => 1
+l6 = LineItem.create :quantity => 2
 
 
 Cart.destroy_all
@@ -33,6 +34,9 @@ Order.destroy_all
 o1 = Order.create :shipped => false
 o2 = Order.create :shipped => false
 o3 = Order.create :shipped => false
+o4 = Order.create :shipped => false
+o5 = Order.create :shipped => false
+o6 = Order.create :shipped => false
 
 
 # ASSOCIATIONS
@@ -40,10 +44,13 @@ o3 = Order.create :shipped => false
 l1.item = i3
 l2.item = i1
 l3.item = i2
+l4.item = i4
+l5.item = i5
+l6.item = i6
 
 o1.line_items << l1 << l2 << l3
 o2.line_items << l4
-o3.line_items << l5
+o3.line_items << l5 << l6
 
 u1.orders << o1
 u2.orders << o2

@@ -17,4 +17,8 @@
 
 class Item < ActiveRecord::Base
   has_one :line_item
+
+  def find_by_category(item)
+    Item.where(:category => item)
+  end
 end

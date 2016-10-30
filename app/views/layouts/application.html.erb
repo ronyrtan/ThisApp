@@ -19,6 +19,7 @@
           <% end %>
         <% end %>
       </div>
+      <div class="navLogo">This.</div>
       <div class="navright">
         <% if @current_user.present? %>
           <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :class => "logoutButton" %>

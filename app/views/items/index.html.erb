@@ -2,9 +2,9 @@
 
 <div class="categorySearchContainer">
   Search By Category.
-  <% @items.pluck('category').uniq.each do |c| %>
+  <% Item.pluck('category').uniq.each do |c| %>
     <p>
-      <%= link_to c, items_show_category_path(c) %>
+      <%= link_to c, item_category_path(c) %>
     </p>
   <% end %>
 </div>

@@ -43,6 +43,13 @@ nav a {
   line-height: 50px;
 }
 
+.navLogo {
+  display: inline-block;
+  position: relative;
+  color: white;
+  font-size: 18px;
+}
+
 .navright {
   display: inline-block;
   position: relative;

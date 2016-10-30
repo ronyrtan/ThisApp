@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root :to => 'users#index'
-  get 'items/show_category' => 'items#show_category'
+  get 'items/show_category/:category' => 'items#show_category', :as => 'item_category'
 
   resources :users
   resources :items

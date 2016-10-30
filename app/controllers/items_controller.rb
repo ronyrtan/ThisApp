@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
 
   def show_category
     @items = Item.find_by_category(params[:category])
-    # binding.pry
   end
 
   def new

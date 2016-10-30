@@ -15,4 +15,9 @@ class LineItem < ActiveRecord::Base
   belongs_to :item
   belongs_to :order
   belongs_to :cart
+
+  def self.total_per_item(price, quantity)
+    price * quantity
+  end
+
 end

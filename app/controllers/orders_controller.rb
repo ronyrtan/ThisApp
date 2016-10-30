@@ -15,4 +15,7 @@ class OrdersController < ApplicationController
 
   def edit
   end
+
+  private
+
 end

@@ -39,6 +39,10 @@ l1.item = i3
 l2.item = i1
 l3.item = i2
 
+o1.line_items << l1 << l2 << l3
+o2.line_items << l2
+o3.line_items << l3
+
 u1.orders << o1
 u2.orders << o2
 u3.orders << o3
@@ -46,10 +50,6 @@ u3.orders << o3
 c1.line_items << l1
 c2.line_items << l2
 c3.line_items << l3
-
-o1.line_items << l1
-o2.line_items << l2
-o3.line_items << l3
 
 u1.cart = c1
 u2.cart = c2

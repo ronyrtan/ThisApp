@@ -1,2 +1,37 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<h1>Order <%= @order.id %></h1>
+
+<p><%= @order.user.name %></p>
+
+<table class="orderTable">
+  <thead>
+    <th>Item Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total per item</th>
+  </thead>
+<% @order.line_items.each do |l|%>
+<tr>
+  <td>
+    <%= l.item.name %>
+  </td>
+  <td>
+    <%= l.quantity %>
+  </td>
+  <td>
+    <%= number_to_currency(l.item.price) %>
+  </td>
+  <td>
+    <%= number_to_currency(LineItem.total_per_item(l.item.price, l.quantity)) %>
+  </td>
+</tr>
+<% end %>
+
+<tr>
+  <td>
+    Total cost
+  </td>
+  <td>
+    <%= number_to_currency(Order.total(@order.line_items)) %>
+  </td>
+</tr>
+</table>

@@ -1,11 +1,19 @@
 <h1>Users Profile</h1>
+<p>
+  <%= @user.name %>
+</p>
+<p>
+  <%= @user.email %>
+</p>
+<p>
+  <%= @user.address %>
+</p>
 
 <p>Profile goes here</p>
 
-<p>Display User info</p>
-
-
-<!-- TODO: -->
-<p>Line Item goes here and quantity</p>
-
-<p>Total price</p>
+<% unless @user.orders.empty? %>
+  <p>Order History:</p>
+  <% @user.orders.each do |u| %>
+    <%= link_to u.id, order_path(u.id) %>
+  <% end %>
+<% end %>

@@ -129,9 +129,10 @@ body {
 }
 
 .signInUpFormButton {
-  height: 25px;
+  height: 40px;
   width: 212px;
   padding: 5px;
+  line-height: 25px;
   border: 1px solid lightblue;
   border-radius: 3px;
   background-color: #337ab7;

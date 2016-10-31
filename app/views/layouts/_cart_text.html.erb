@@ -1,1 +1,5 @@
-<%= link_to "#{@cart.line_items.size unless @cart.nil?} Items in Cart ( #{number_to_currency(Cart.total(@cart.line_items)) unless @cart.nil?} )", carts_path %>
+<% if @current_user.present? %>
+  <div class='itemsInCartCont'>
+    <%= link_to "#{@cart.line_items.size unless @cart.nil?} Items in Cart ( #{number_to_currency(Cart.total(@cart.line_items)) unless @cart.nil?} )", carts_path, :class => 'itemsInCart' %>
+  </div>
+<% end %>

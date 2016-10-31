@@ -1,6 +1,8 @@
 <h1>Carts#index</h1>
 
 <% @line_items.each do |l| %>
-  <%= l.item.name %>
-  <%= l.quantity %>
+  <div class="lineItemRow">
+    <%= l.item.name %>
+    <%= l.quantity %>
+  </div>
 <% end %>

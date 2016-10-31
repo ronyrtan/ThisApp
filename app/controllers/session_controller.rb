@@ -6,6 +6,8 @@ class SessionController < ApplicationController
     user = User.find_by :email => params[:email]
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
+      # current_cart.id = user.id
+      # current_cart.save
       redirect_to users_path
     else
       flash[:message] = 'Invalid email or password'

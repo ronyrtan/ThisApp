@@ -262,3 +262,11 @@ body {
   vertical-align: top;
   margin-bottom: 10px;
 }
+
+
+/*/// CART ///*/
+
+.lineItemRow {
+  display: inline-block;
+  width: 100%;
+}

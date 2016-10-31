@@ -20,7 +20,7 @@ class Cart < ActiveRecord::Base
       # raise params
       line_item.save
     else
-      self.line_items << LineItem.new(item_id: item_id, quantity: 0)
+      self.line_items << LineItem.new(item_id: item_id, quantity: 1)
     end
     save
   end

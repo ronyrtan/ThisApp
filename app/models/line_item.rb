@@ -16,12 +16,19 @@ class LineItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :cart
 
+  # before_save :default_values
+  # before_save :increment_quantity
+
+  def default_values
+    self.quantity ||= 0
+  end
+
   def self.total_per_item(price, quantity)
     price * quantity
   end
 
-  def self.increment_quantity(quantity)
-    quantity += 1
+  def increment_quantity
+    self.quantity += 1
   end
 
 end

@@ -4,8 +4,6 @@ class LineItemsController < ApplicationController
 
   def show
     @line_item = LineItem.find_by(:item_id => params[:id])
-    LineItem.increment_quantity(@line_item.quantity)
-
   end
 
   def new
@@ -16,6 +14,7 @@ class LineItemsController < ApplicationController
     item = Item.find(params[:id])
     @line_item = @cart.line_items.build(:item => item)
 
+    raise 'how does it get here??'
 
     if @line_item.save
       redirect_to(@line_item.cart, :notice => 'Line item was succesfully created.')

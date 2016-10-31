@@ -1,0 +1,25 @@
+<div class="well">
+  <div class="row">
+    <h4><%= item.name %></h4>
+  </div>
+  <div>
+    <%= form_for line_item, remote: true do |f| %>
+    <h4 class="text-right">Unit Price: <span><%= number_to_currency line_item.item.price %></span></h4>
+    <div>
+      <div>
+        <%= f.number_field :quantity, value: line_item.quantity, class: "", min: 1 %>
+        <%= f.hidden_field :item_id, value: line_item.item_id %>
+      </div>
+      <div>
+        <div class=''>
+          <%= f.submit "Update Quantity", class: '' %>
+          <%= link_to "Delete", line_item, {data: { confirm: "Are you sure you wish to delete the item '#{line_item.item.name}' from your cart?" }, method: :delete, remote: true, class: ''} %>
+        </div>
+      </div>
+    </div>
+    <h4 class="">
+      Total Price: <span><%= number_to_currency LineItem.total_per_item(line_item.item.price, line_item.quantity) %></span>
+    </h4>
+    <% end %>
+  </div>
+</div>

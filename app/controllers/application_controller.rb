@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :fetch_user
+  before_action :current_cart
 
   private
   def fetch_user
@@ -22,17 +23,19 @@ class ApplicationController < ActionController::Base
   end
 
   def current_cart
-    cart = Cart.find_by(id: session[:cart_id], user_id: @current_user.id)
-    if cart.present?
-      cart
-    else
-      cart = Cart.new
-      cart.user_id = @current_user.id
-      if cart.save
-        session[:cart_id] = cart.id
+    if @current_user.present?
+      @cart = Cart.find_by(id: session[:cart_id], user_id: @current_user.id)
+      if @cart.present?
+        @cart
+      else
+        @cart = Cart.new
+        @cart.user_id = @current_user.id
+        if @cart.save
+          session[:cart_id] = @cart.id
+        end
       end
+      @cart
     end
-    cart
   end
 
 end

@@ -1,0 +1,1 @@
+<%= link_to "#{@cart.line_items.size unless @cart.nil?} Items in Cart ( #{number_to_currency(Cart.total(@cart.line_items)) unless @cart.nil?} )", carts_path %>

@@ -1,0 +1,12 @@
+<% unless @line_item.present? %>
+
+  <% end %>
+  <% if @line_items.size == 0 %>
+      <p class="text_center">
+        There are no items in your shopping cart. Please <%= link_to "go back", items_path %> and add some items to your cart.
+      </p>
+    <% else %>
+      <% @line_items.each do |li| %>
+        <%= render 'carts/cart_row', item: li.item, line_item: li, show_total: true %>
+    <% end %>
+  <% end %>

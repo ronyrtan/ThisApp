@@ -20,4 +20,8 @@ class LineItem < ActiveRecord::Base
     price * quantity
   end
 
+  def self.increment_quantity(quantity)
+    quantity += 1
+  end
+
 end

@@ -22,7 +22,7 @@
           <%= number_to_currency(i.price) %>
         </p>
         <p>
-          <%= link_to 'Add to cart', items_path, :class => 'addToCartButton' %>
+          <%= button_to 'Add to cart', line_item_create_path(i), :class => 'addToCartButton' %>
         </p>
       </li>
     </div>

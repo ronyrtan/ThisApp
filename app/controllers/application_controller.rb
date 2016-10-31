@@ -20,4 +20,14 @@ class ApplicationController < ActionController::Base
   def check_for_admin
     redirect_to root_path unless (@current_user.present? && @current_user.admin?)
   end
+
+  def current_cart
+    if session[:cart_id].present?
+      Cart.find(session[:cart_id])
+    else
+      cart = Cart.create
+      session[:cart_id] = cart.id
+      cart
+    end
+  end
 end

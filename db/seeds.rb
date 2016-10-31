@@ -14,12 +14,12 @@ i3 = Item.create :name => "That Poor Man's Weapon", :price => 40, :description =
 
 LineItem.destroy_all
 
-l1 = LineItem.create :quantity => 3
-l2 = LineItem.create :quantity => 1
-l3 = LineItem.create :quantity => 2
-l4 = LineItem.create :quantity => 3
-l5 = LineItem.create :quantity => 1
-l6 = LineItem.create :quantity => 2
+l1 = LineItem.create :quantity => 0
+l2 = LineItem.create :quantity => 0
+l3 = LineItem.create :quantity => 0
+l4 = LineItem.create :quantity => 0
+l5 = LineItem.create :quantity => 0
+l6 = LineItem.create :quantity => 0
 
 
 Cart.destroy_all

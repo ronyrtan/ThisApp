@@ -1,0 +1,19 @@
+<div class="checkOutContainer">
+  Check Out Container
+  <h2>Total</h2>
+  <p>Sub-total</p>
+  <p>shipping</p>
+<%= form_tag(orders_path, :id => "payment-form") do %>
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_2UZnyLOS0s7K3TG1KXJeT14X"
+    data-amount="<%= Cart.total(@cart.line_items) * 100 %>"
+    data-name="This"
+    data-description="Widget"
+    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true"
+    data-currency="aud">
+  </script>
+<% end %>
+  <p>we accept:</p>

@@ -1,3 +1,5 @@
 $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
 $(".shoppingCart").html('')
+$(".checkOutContainer").html('')
 $(".shoppingCart").html("<%= escape_javascript(render 'carts/shoppingCart') %>")
+$(".checkOutContainer").html("<%= escape_javascript(render 'carts/checkout') %>")

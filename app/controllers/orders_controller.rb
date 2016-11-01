@@ -16,6 +16,8 @@ class OrdersController < ApplicationController
     @order.stripe_token = params[:stripeToken]
     if @order.save
       redirect_to order_complete_path
+      @cart.destroy
+      # @cart = Cart.new
     end
   end
 

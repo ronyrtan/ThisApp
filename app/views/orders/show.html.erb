@@ -9,7 +9,7 @@
     <th>Price</th>
     <th>Total per item</th>
   </thead>
-<% @order.line_items.each do |l|%>
+<% @cart.line_items.each do |l|%>
 <tr>
   <td>
     <%= l.item.name %>
@@ -31,7 +31,7 @@
     Total cost
   </td>
   <td>
-    <%= number_to_currency(Order.total(@order.line_items)) %>
+    <%= number_to_currency(Order.total(@cart.line_items)) %>
   </td>
 </tr>
 </table>

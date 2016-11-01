@@ -4,7 +4,7 @@
   </div>
   <div class="checkOutSub">
     <p>Sub-total: <%= number_to_currency(Cart.total(@cart.line_items)) %></p>
-    <p>Shipping: $10.00 </p>
+    <p>Shipping: Standard Shipping (Free) </p>
   </div>
   <div class="checkOutButton">
     <%= form_tag(orders_path, :id => "payment-form") do %>

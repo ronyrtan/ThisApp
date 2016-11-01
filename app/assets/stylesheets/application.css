@@ -12,6 +12,7 @@ nav {
   line-height: 45px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.19);
   background: #3c3c3c;
+  z-index: -5;
 }
 
 nav a {
@@ -116,7 +117,7 @@ nav a {
   height: 32px;
   width: 55px;
   border: 1px solid white;
-  background-color: #3c3c3c;
+  background-color: rgba(0, 0, 0, 0);;
   font-size: 14px;
   color: white;
   margin: 7px 10px 0 -5px ;
@@ -127,13 +128,19 @@ nav a {
 
 .searchIcon {
   transform: rotate(-45deg);
-  position: absolute;
+  position: relative;
   display: inline-block;
   color: white;
-  left: 178px;
+  background: rgba(0, 0, 0, 0);
+  left: -48px;
   top: -2px;
   font-weight: 600;
   font-size: 19px;
+  border: none;
+}
+
+.searchIcon:focus {
+  outline: none;
 }
 
 /*/// CART NAV ///*/

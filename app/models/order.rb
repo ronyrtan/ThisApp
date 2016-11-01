@@ -13,7 +13,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :line_items
 
-  def self.total(line_items)
+  def total(line_items)
     sum = 0
     line_items.each do |l|
       sum += (l.item.price * l.quantity)

@@ -21,6 +21,14 @@
       </div>
       <div class="navLogo">This.</div>
       <div class="navright">
+
+        <ul class="search-box">
+          <%= form_tag(items_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Items" %>
+          <%= submit_tag "Search", :name => nil %>
+          <% end %>
+        </ul>
+
         <% if @current_user.present? %>
           <%= link_to "Logout #{ @current_user.name }", login_path, :method => 'delete', :class => "logoutButton" %>
         <% else %>

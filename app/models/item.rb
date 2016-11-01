@@ -21,4 +21,8 @@ class Item < ActiveRecord::Base
   def self.find_by_category(item)
     Item.where(:category => item)
   end
+
+  def self.search(search)
+    where("name ILIKE ?", "%#{search}%")
+  end
 end

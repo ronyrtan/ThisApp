@@ -7,7 +7,19 @@ class OrdersController < ApplicationController
     @order = Order.find params[:id]
   end
 
-  def new
+  def create
+
+    puts params
+
+    @order = Order.new
+    @order.user_id = @current_user.id
+    @order.stripe_token = params[:stripeToken]
+    if @order.save
+      redirect_to order_complete_path
+    end
+  end
+
+  def order_complete
   end
 
   def destroy
@@ -17,5 +29,4 @@ class OrdersController < ApplicationController
   end
 
   private
-
 end

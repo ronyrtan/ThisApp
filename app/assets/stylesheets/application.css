@@ -78,20 +78,21 @@ nav a {
 }
 
 .signInOutButton {
-  border: 1px solid lightblue;
+  border: 1px solid #626E60;
   padding: 5px;
-  height: 21px;
-  margin-top: 5px;
-  line-height: 25px;
+  height: 19px;
+  vertical-align: top;
+  margin-top: 7px;
+  line-height: 21px;
   display: inline-block;
   border-radius: 3px;
-  color: lightblue;
+  background-color: #626E60;
+  color: white;
   transition: all .2s ease;
 }
 
 .signInOutButton:hover {
-  color: white;
-  background-color: lightblue;
+  border: 1px solid white;
 }
 
 .search-box {
@@ -189,9 +190,9 @@ body {
   width: 212px;
   padding: 5px;
   line-height: 25px;
-  border: 1px solid lightblue;
+  border: 1px solid #626E60;
   border-radius: 3px;
-  background-color: #337ab7;
+  background-color: #626E60;
   font-size: 16px;
   color: white;
   margin: 10px 0;
@@ -200,18 +201,16 @@ body {
 
 .signInUpFormButton:hover {
   cursor: pointer;
-  background: white;
-  color: lightblue;
+  border: 1px solid black;
 }
 
 .signInUpContainer {
-  margin-top: 10px;
   position: relative;
   text-align: center;
-  margin: 0 auto;
+  margin: 10px auto;
   width: 500px;
   background: white;
-  border: 1px solid lightblue;
+  border: 1px solid #626E60;
   border-radius: 4px;
 }
 

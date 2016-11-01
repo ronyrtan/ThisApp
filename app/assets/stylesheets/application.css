@@ -369,3 +369,7 @@ body {
   padding: 3px;
   vertical-align: middle;
 }
+
+.search-box {
+  display: inline-block;
+}

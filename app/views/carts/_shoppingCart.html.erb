@@ -6,6 +6,7 @@
         There are no items in your shopping cart. Please <%= link_to "go back", items_path %> and add some items to your cart.
       </p>
     <% else %>
+      <% @line_items = @line_items.order("created_at DESC") %>
       <% @line_items.each do |li| %>
         <%= render 'carts/cart_row', item: li.item, line_item: li, show_total: true %>
     <% end %>

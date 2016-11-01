@@ -11,7 +11,7 @@ nav {
   height: 45px;
   line-height: 45px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.19);
-  background: #222222;
+  background: #3c3c3c;
 }
 
 nav a {
@@ -39,7 +39,7 @@ nav a {
 .navleft {
   display: inline-block;
   position: relative;
-  width: 500px;
+  width: 450px;
   line-height: 50px;
 }
 
@@ -60,27 +60,27 @@ nav a {
 }
 
 .logoutButton {
-  border: 1px solid lightblue;
+  border: 1px solid #626E60;
   padding: 5px;
-  height: 23px;
-  margin-top: 5px;
-  line-height: 25px;
+  height: 19px;
+  vertical-align: top;
+  margin-top: 7px;
+  line-height: 21px;
   display: inline-block;
   border-radius: 3px;
-  color: lightblue;
+  color: white;
+  background: #626E60;
   transition: all .2s ease;
 }
 
 .logoutButton:hover {
-  color: white;
-  background-color: lightblue;
   border: 1px solid white;
 }
 
 .signInOutButton {
   border: 1px solid lightblue;
   padding: 5px;
-  height: 23px;
+  height: 21px;
   margin-top: 5px;
   line-height: 25px;
   display: inline-block;
@@ -94,15 +94,50 @@ nav a {
   background-color: lightblue;
 }
 
+.search-box {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.searchText {
+  height: 30px;
+  border: 1px solid white;
+  background-color: #3c3c3c;
+  font-size: 14px;
+  color: white;
+  padding-left: 10px;
+  vertical-align: top;
+  margin-top: 7px;
+}
+
+.searchSubmit {
+  height: 32px;
+  width: 55px;
+  border: 1px solid white;
+  background-color: #3c3c3c;
+  font-size: 14px;
+  color: white;
+  margin: 7px 10px 0 -5px ;
+  padding: 0 3px;
+  line-height: 20px;
+  vertical-align: top;
+}
+
+/*/// CART NAV ///*/
+
 .itemsInCart {
   font-size: 14px;
   display: inline-block;
   position: relative;
-  /*border: 1px solid lightgray;*/
+  border-left: 1px solid gray;
   padding: 3px;
   text-decoration: none;
   float: right;
   color: gray;
+}
+
+.itemsInCart:hover {
+  color: #945D60;
 }
 
 .itemsInCartCont {
@@ -114,6 +149,8 @@ nav a {
   border-bottom: 1px solid gray;
   vertical-align: top;
 }
+
+
 
 /*/// BODY ///*/
 
@@ -222,12 +259,23 @@ body {
 
 
 .categorySearchContainer {
-  width: 150px;
+  padding: 5px;
+  width: 140px;
   height: 500px;
   border: 1px solid lightgray;
   display: inline-block;
   position: relative;
   border-radius: 2px;
+}
+
+.categorySearchContainer ul {
+  list-style: none;
+}
+
+.categorySearchContainer a {
+  text-decoration: none;
+  color: gray;
+  line-height: 1.5em;
 }
 
 .imageIndexContainer {
@@ -267,7 +315,7 @@ body {
   border: 1px solid white;
   padding: 3px;
   border-radius: 3px;
-  background-color: lightblue;
+  background-color: #945D60;
   transition: all .3s ease;
 }
 
@@ -352,8 +400,8 @@ body {
 }
 
 .liNumField {
-  width: 20px;
-  padding: 3px 0 3px 10px;
+  width: 25px;
+  padding: 3px 0 3px 5px;
   border: 1px solid lightgray;
   vertical-align: middle;
 }
@@ -363,8 +411,4 @@ body {
   background-color: white;
   padding: 3px;
   vertical-align: middle;
-}
-
-.search-box {
-  display: inline-block;
 }

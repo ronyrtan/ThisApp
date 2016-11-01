@@ -1,7 +1,7 @@
 <h1>Items Catalog</h1>
 
 <div class="categorySearchContainer">
-  <h4>Search By Category.</h4>
+  <h4>Refine By: </h4>
   <ul>
     <% Item.pluck('category').uniq.each do |c| %>
       <li><%= link_to c, items_path(:category => c) %></li>

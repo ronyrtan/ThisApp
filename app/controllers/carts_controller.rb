@@ -10,7 +10,7 @@ class CartsController < ApplicationController
 
   def add_to_cart
     current_cart.add_item(params[:item_id])
-    redirect_to carts_path(current_cart.id)
+    redirect_to items_path
   end
 
   def new
@@ -20,5 +20,8 @@ class CartsController < ApplicationController
   end
 
   def edit
+  end
+
+  def payment
   end
 end

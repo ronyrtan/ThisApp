@@ -70,6 +70,7 @@ nav a {
   border-radius: 3px;
   color: white;
   background: #626E60;
+  font-size: 15px;
   transition: all .2s ease;
 }
 
@@ -122,6 +123,17 @@ nav a {
   padding: 0 3px;
   line-height: 20px;
   vertical-align: top;
+}
+
+.searchIcon {
+  transform: rotate(-45deg);
+  position: absolute;
+  display: inline-block;
+  color: white;
+  left: 178px;
+  top: -2px;
+  font-weight: 600;
+  font-size: 19px;
 }
 
 /*/// CART NAV ///*/
@@ -333,6 +345,16 @@ body {
   margin-bottom: 10px;
 }
 
+.indexItemPrice {
+  display: inline-block;
+}
+
+.indexCartButton {
+  display: inline-block;
+  position: relative;
+  margin-left: 136px;
+}
+
 
 /*/// CART ///*/
 
@@ -341,15 +363,6 @@ body {
   /*border: 1px solid gray;*/
   display: inline-block;
   position: relative;
-}
-
-.checkOutContainer {
-  width: 350px;
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-  border: 1px solid lightgray;
-  height: 400px;
 }
 
 .lineItemRow {
@@ -411,3 +424,66 @@ body {
   padding: 3px;
   vertical-align: middle;
 }
+
+.checkOutContainer {
+  width: 310px;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  border: 1px solid lightgray;
+  height: 280px;
+  padding: 20px;
+  background: white;
+}
+
+.checkOutTotal {
+  height:40px;
+  line-height: 40px;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkOutSub {
+  height:80px;
+  padding-top: 10px;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+  border-bottom: 1px solid gray;
+  line-height: 2em;
+  font-weight: 600;
+}
+
+.checkOutButton {
+  margin: 10px 0;
+}
+
+.checkOutButton button {
+  width: 310px;
+}
+
+.checkOutAccept {
+  margin-top: 20px;
+}
+
+.checkOutAccept h5 {
+  letter-spacing: 1.2px;
+  font-size: 11px;
+}
+
+.payment-options-image {
+  transform: scale(.5);
+  position: absolute;
+  left: -75px;
+}
+
+/*#payment-form {
+  width:200px;
+  display: inline-block;
+  border: 1px solid black;
+}*/

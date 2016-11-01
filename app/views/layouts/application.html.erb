@@ -26,7 +26,8 @@
         <ul class="search-box">
           <%= form_tag(items_path, :method => "get", id: "search-form") do %>
             <%= text_field_tag :search, params[:search], placeholder: " Search Items", class: "searchText" %>
-            <%= submit_tag "Search", :name => nil, :class => "searchSubmit" %>
+            <%= submit_tag "", :name => nil, :class => "searchSubmit" %><div class="searchIcon">⚲</div>
+                                                                        
           <% end %>
         </ul>
 

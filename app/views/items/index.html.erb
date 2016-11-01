@@ -18,12 +18,14 @@
         <p>
           <%= link_to i.name, item_path(i) %>
         </p>
-        <p>
-          <%= number_to_currency(i.price) %>
-        </p>
-        <p>
+        <div class="indexItemPrice">
+          <p>
+            <%= number_to_currency(i.price) %>
+          </p>
+        </div>
+        <div class="indexCartButton">
           <%= button_to 'Add to cart', add_to_cart_path(i), :class => 'addToCartButton' %>
-        </p>
+        </div>
       </li>
     </div>
     <% end %>

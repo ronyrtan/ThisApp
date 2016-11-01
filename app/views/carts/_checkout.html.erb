@@ -1,19 +1,28 @@
 <div class="checkOutContainer">
-  Check Out Container
-  <h2>Total</h2>
-  <p>Sub-total</p>
-  <p>shipping</p>
-<%= form_tag(orders_path, :id => "payment-form") do %>
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_2UZnyLOS0s7K3TG1KXJeT14X"
-    data-amount="<%= Cart.total(@cart.line_items) * 100 %>"
-    data-name="This"
-    data-description="Widget"
-    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-    data-locale="auto"
-    data-zip-code="true"
-    data-currency="aud">
-  </script>
-<% end %>
-  <p>we accept:</p>
+  <div class="checkOutTotal">
+    <h3>TOTAL</h3>
+  </div>
+  <div class="checkOutSub">
+    <p>Sub-total: <%= number_to_currency(Cart.total(@cart.line_items)) %></p>
+    <p>Shipping: $10.00 </p>
+  </div>
+  <div class="checkOutButton">
+    <%= form_tag(orders_path, :id => "payment-form") do %>
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_test_2UZnyLOS0s7K3TG1KXJeT14X"
+      data-amount="<%= Cart.total(@cart.line_items) * 100 %>"
+      data-name="This"
+      data-description="Widget"
+      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+      data-locale="auto"
+      data-zip-code="true"
+      data-currency="aud">
+    </script>
+    <% end %>
+  </div>
+  <div class="checkOutAccept">
+    <h5>WE ACCEPT: </h5>
+    <img class="payment-options-image" data-bind="attr: { src: imageUrl, alt: 'payment options' }" src="https://assets.asosservices.com/asos-finance/images/marketing/single.png" alt="payment options">
+  </div>
+</div>

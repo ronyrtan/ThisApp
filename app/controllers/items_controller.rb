@@ -4,16 +4,12 @@ class ItemsController < ApplicationController
 
     if params[:search]
       @items = Item.search(params[:search]).order("created_at DESC")
-    elsif params[:type].present?
-      @items = Item.where(:type_id => @type_id).order("created_at DESC")
     else
       @items = Item.all.order("created_at DESC")
     end
 
     if params[:category]
       @items = Item.where(:category => params[:category])
-    else
-      @items = Item.all
     end
   end
 

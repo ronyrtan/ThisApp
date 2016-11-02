@@ -518,10 +518,17 @@ body {
 .processingContainer .row {
   line-height: 2em;
 }
+.processingContainer .rowUnder {
+  border-bottom: 1px solid lightgray;
+  padding: 20px 0;
+
+
+}
 
 .processCN {
   width: 173px;
   height: 30px;
+  margin-top: 20px;
   padding-left: 30px;
   font-size: 14px;
   position: relative;
@@ -541,14 +548,30 @@ body {
   left: 9px;
 }
 
+.fa-lock {
+  position: relative;
+  left: -100px;
+  top: 2px;
+}
+
+.expSpacer {
+  position: relative;
+  display: inline-block;
+  z-index: 5;
+  left: 45px;
+  top: 2px;
+  color: gray;
+}
+
 .processEXPm {
   height: 30px;
   width: 50px;
-  text-align: right;
+  text-align: center;
   margin-right: -5px;
   position: relative;
-  left: -19px;
-  padding-left: 17px;
+  left: -24px;
+  padding-left: 15px;
+  font-size: 13px;
   border-left: 1px solid lightgray;
   border-right: none;
   border-top: 1px solid lightgray;
@@ -560,26 +583,48 @@ body {
   text-align: center;
   margin-right: -5px;
   position: relative;
-  left: -19px;
-  border-right: 1px solid lightgray;
+  left: -24px;
+  font-size: 13px;
+  padding-right: 5px;
+  border-right: none;
   border-left: none;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
 }
 
 .processCVC {
-  height: 30px;
-  width: 101px;
+  height: 28px;
+  width: 103px;
   text-align: center;
-  margin-left: -5px;
+  margin-left: -24px;
+  font-size: 13px;
 }
 
 .orderSummary {
   border: 1px solid black;
   display: inline-block;
   width: 355px;
-  height: 300px;
   vertical-align: top;
   padding: 10px;
   margin-left: 5px;
+}
+
+.cartBuyButton {
+  width: 207px;
+  height: 30px;
+  margin-top: 5px;
+  position: relative;
+  font-size: 14px;
+  background: #945D60;
+  color: white;
+  border: none;
+}
+
+.orderSummaryContent {
+  border: 1px solid black;
+}
+
+.orderSummaryContent img {
+  height: 100px;
+  width: 100px;
 }

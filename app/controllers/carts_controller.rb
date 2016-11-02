@@ -1,11 +1,11 @@
 class CartsController < ApplicationController
   def index
-    @line_items = current_cart.line_items
+    @line_items = @cart.line_items
 
   end
 
   def show
-    @line_items = current_cart.line_items
+    @line_items = @cart.line_items
   end
 
   def add_to_cart
@@ -14,6 +14,8 @@ class CartsController < ApplicationController
   end
 
   def cart_processing
+    @line_items = @cart.line_items
+    
   end
 
   def new

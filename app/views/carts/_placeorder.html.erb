@@ -1,0 +1,21 @@
+  <% @line_items = @line_items.order("created_at DESC") %>
+  <% @line_items.each do |li| %>
+  <div class="orderSummaryContent">
+    <div class="cartLiImage">
+      <%= image_tag li.item.image %>
+    </div>
+      <div class="cartLiContent">
+        <div>
+          <h4 class="text-right"><span><%= number_to_currency li.item.price %></span></h4>
+          <h5><%= li.item.name %></h5>
+
+          <div>
+            Quantity: <%= li.quantity %>
+          </div>
+        </div>
+        <h5 class="">
+          Total Price: <span><%= number_to_currency LineItem.total_per_item(li.item.price, li.quantity) %></span>
+        </h5>
+      </div>
+    </div>
+  <% end %>

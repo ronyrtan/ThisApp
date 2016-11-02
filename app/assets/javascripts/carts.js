@@ -56,7 +56,10 @@ console.log('in carts.js');
   // EVENT LISTENER
   $('#payment-form').on('submit', generateToken);
 
-
+  // CREDIT CARD FORMATTING
+  $('.processCN').on('keypress', function(e){
+    e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+  })
 
 
 });

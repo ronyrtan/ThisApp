@@ -3,28 +3,44 @@
     <span class="payment-errors"></span>
 
     <div class="row">
-      <%= label_tag '', number_to_currency(Cart.total(@cart.line_items)) , 'data-stripe' => 'amount' %>
-    </div>
-    <div class="row">
       <%= label_tag '', @current_user.email, 'data-stripe' => 'email' %>
     </div>
 
     <div class="row">
-        <i class="fa fa-credit-card" aria-hidden="true"></i>
-        <%= text_field_tag '', nil, 'data-stripe' => 'number', :placeholder => 'Card Number', :class => 'processCN', :maxlength => 16 %>
+      <h4>Billing Address: </h4>
+      <%= label_tag '', @current_user.billing_details, 'data-stripe' => 'address_line1' %>
+    </div>
+
+    <div class="row rowUnder">
+      <h4>Shipping Address: </h4>
+      <%= label_tag '', @current_user.address, 'data-stripe' => 'address_line1' %>
     </div>
 
     <div class="row">
-      <i class="fa fa-calendar-o" aria-hidden="true"></i>
+        <i class="fa fa-credit-card" aria-hidden="true"></i>
+        <%= text_field_tag '', nil, 'data-stripe' => 'number', :placeholder => 'Card Number', :class => 'processCN', :maxlength => 19 %>
+    </div>
+
+    <div class="row">
+      <i class="fa fa-calendar-o" aria-hidden="true"></i><div class="expSpacer">/</div>
       <%= text_field_tag '', nil, :size => 3, 'data-stripe' => 'exp-month', :placeholder => "MM", :maxlength => 2, :class => 'processEXPm' %>
       <%= text_field_tag '', nil, :size => 3, 'data-stripe' => 'exp-year', :placeholder => "YY", :maxlength => 2, :class => 'processEXPy' %>
       <%= text_field_tag '', nil, :size => 4, 'data-stripe' => 'cvc', :placeholder => "CVC", :class => 'processCVC' %>
+      <i class="fa fa-lock" aria-hidden="true"></i>
     </div>
 
-    <button type="submit">Buy Now</button>
+    <button type="submit" class="cartBuyButton">Place Order</button>
   <% end %>
 </div>
 
 <div class="orderSummary">
   <h3>Order Summary</h3>
+
+  <div class="row rowUnder">
+    <%= label_tag '', 'Total to pay: '+number_to_currency(Cart.total(@cart.line_items))+'' , 'data-stripe' => 'amount' %>
+  </div>
+
+  <%= render "placeorder" %>
+
+
 </div>

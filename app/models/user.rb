@@ -18,4 +18,9 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :orders
   has_one :cart
+  has_one :wishlist
+
+  def add_to_wishlist(item)
+    wishlist.items << item
+  end
 end

@@ -23,7 +23,9 @@
             <%= number_to_currency(i.price) %>
           </p>
         </div>
+
         <div class="indexCartButton">
+          <%= link_to(raw('<i class="fa fa-heart" aria-hidden="true"></i>'), add_to_wishlist_path(i), :method => 'POST') %>
           <%= button_to 'Add to cart', add_to_cart_path(i), :class => 'addToCartButton' %>
         </div>
       </li>

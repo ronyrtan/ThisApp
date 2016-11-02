@@ -17,6 +17,7 @@
 
 class Item < ActiveRecord::Base
   has_one :line_item
+  has_and_belongs_to_many :wishlists
 
   def self.find_by_category(item)
     Item.where(:category => item)

@@ -630,10 +630,15 @@ body {
 }
 
 .orderSummaryContent {
-  border: 1px solid black;
+  border-top: 1px solid lightgray;
+  padding: 10px 0;
 }
 
 .orderSummaryContent img {
   height: 100px;
   width: 100px;
+}
+
+.cartLiContentSum {
+
 }

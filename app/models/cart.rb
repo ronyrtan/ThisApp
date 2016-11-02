@@ -16,7 +16,7 @@ class Cart < ActiveRecord::Base
   # before_save :update_total
 
   def add_item(item_id)
-      line_item = line_items.where('item_id = ?', item_id).first
+    line_item = line_items.where('item_id = ?', item_id).first
     if line_item
       line_item.quantity += 1
       # raise params

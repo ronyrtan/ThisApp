@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :fetch_user
   before_action :current_cart
+  before_action :fetch_wishlist
 
   private
   def fetch_user
@@ -35,6 +36,25 @@ class ApplicationController < ActionController::Base
         end
       end
       @cart
+    end
+  end
+
+  def fetch_wishlist
+    if @current_user.present? && @current_user.wishlist.present?
+      @wishlist = Wishlist.find_by(id: @current_user.wishlist.id, user_id: @current_user.id)
+      if @wishlist.present?
+        @wishlist
+      else
+        @wishlist = Wishlist.new
+        @wishlist.user_id = @current_user.id
+        @wishlist.save
+      end
+      @wishlist
+    elsif @current_user.present?
+      @wishlist = Wishlist.new
+      @wishlist.user_id = @current_user.id
+      @wishlist.save
+      @wishlist
     end
   end
 

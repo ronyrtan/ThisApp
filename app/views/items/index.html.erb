@@ -25,7 +25,12 @@
         </div>
 
         <div class="indexCartButton">
-          <%= link_to(raw('<i class="fa fa-heart" aria-hidden="true"></i>'), add_to_wishlist_path(i), :method => 'POST') %>
+          <% if @wishlist.items.include?(i) %>
+            <%= link_to(raw('<i class="fa fa-heart" aria-hidden="true"></i>'), add_to_wishlist_path(i, type: "unwish"), :method => 'POST') %>
+          <% else %>
+            <%= link_to(raw('<i class="fa fa-heart-o" aria-hidden="true"></i>'), add_to_wishlist_path(i, type: "wish"), :method => 'POST') %>
+          <% end %>
+
           <%= button_to 'Add to cart', add_to_cart_path(i), :class => 'addToCartButton' %>
         </div>
       </li>

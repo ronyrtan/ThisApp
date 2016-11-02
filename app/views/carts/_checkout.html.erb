@@ -10,7 +10,7 @@
     <%= form_tag(orders_path, :id => "payment-form") do %>
     <script
       src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="pk_test_2UZnyLOS0s7K3TG1KXJeT14X"
+      data-key="pk_test_K0JzIUsN2Cc2kfstB87gy2Vs"
       data-amount="<%= Cart.total(@cart.line_items) * 100 %>"
       data-name="This"
       data-description="Widget"

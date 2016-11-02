@@ -13,6 +13,9 @@ class CartsController < ApplicationController
     redirect_to items_path
   end
 
+  def cart_processing
+  end
+
   def new
   end
 

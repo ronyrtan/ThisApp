@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 console.log('in carts.js');
 
-  Stripe.setPublishableKey('pk_test_2UZnyLOS0s7K3TG1KXJeT14X');
+  Stripe.setPublishableKey('pk_test_K0JzIUsN2Cc2kfstB87gy2Vs');
 
 
   var generateToken = function(e) {

@@ -1,0 +1,30 @@
+<div class="processingContainer">
+  <%= form_tag(orders_path, :id => "payment-form") do %>
+    <span class="payment-errors"></span>
+
+    <div class="row">
+      <%= label_tag '', number_to_currency(Cart.total(@cart.line_items)) , 'data-stripe' => 'amount' %>
+    </div>
+    <div class="row">
+      <%= label_tag '', @current_user.email, 'data-stripe' => 'email' %>
+    </div>
+
+    <div class="row">
+        <i class="fa fa-credit-card" aria-hidden="true"></i>
+        <%= text_field_tag '', nil, 'data-stripe' => 'number', :placeholder => 'Card Number', :class => 'processCN', :maxlength => 16 %>
+    </div>
+
+    <div class="row">
+      <i class="fa fa-calendar-o" aria-hidden="true"></i>
+      <%= text_field_tag '', nil, :size => 3, 'data-stripe' => 'exp-month', :placeholder => "MM", :maxlength => 2, :class => 'processEXPm' %>
+      <%= text_field_tag '', nil, :size => 3, 'data-stripe' => 'exp-year', :placeholder => "YY", :maxlength => 2, :class => 'processEXPy' %>
+      <%= text_field_tag '', nil, :size => 4, 'data-stripe' => 'cvc', :placeholder => "CVC", :class => 'processCVC' %>
+    </div>
+
+    <button type="submit">Buy Now</button>
+  <% end %>
+</div>
+
+<div class="orderSummary">
+  <h3>Order Summary</h3>
+</div>

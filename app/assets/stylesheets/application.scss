@@ -1,3 +1,6 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 * {
   margin: 0;
   padding: 0;
@@ -494,3 +497,89 @@ body {
   display: inline-block;
   border: 1px solid black;
 }*/
+
+
+
+
+
+/*/// PROCESSING ///*/
+
+
+
+
+.processingContainer {
+  border: 1px solid black;
+  width: 550px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.processingContainer .row {
+  line-height: 2em;
+}
+
+.processCN {
+  width: 173px;
+  height: 30px;
+  padding-left: 30px;
+  font-size: 14px;
+  position: relative;
+  left: -22px;
+}
+
+.fa {
+  position: relative;
+  z-index: 5;
+}
+
+.fa-credit-card {
+  left: 8px;
+}
+
+.fa-calendar-o {
+  left: 9px;
+}
+
+.processEXPm {
+  height: 30px;
+  width: 50px;
+  text-align: right;
+  margin-right: -5px;
+  position: relative;
+  left: -19px;
+  padding-left: 17px;
+  border-left: 1px solid lightgray;
+  border-right: none;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+.processEXPy {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  margin-right: -5px;
+  position: relative;
+  left: -19px;
+  border-right: 1px solid lightgray;
+  border-left: none;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.processCVC {
+  height: 30px;
+  width: 101px;
+  text-align: center;
+  margin-left: -5px;
+}
+
+.orderSummary {
+  border: 1px solid black;
+  display: inline-block;
+  width: 355px;
+  height: 300px;
+  vertical-align: top;
+  padding: 10px;
+  margin-left: 5px;
+}

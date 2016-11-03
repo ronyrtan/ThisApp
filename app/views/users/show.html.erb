@@ -1,19 +1,46 @@
-<h1>Users Profile</h1>
-<p>
-  <%= @user.name %>
-</p>
-<p>
-  <%= @user.email %>
-</p>
-<p>
-  <%= @user.address %>
-</p>
+<h3>User Profile</h3>
 
-<p>Profile goes here</p>
+<div class="userProfileCont">
 
-<% unless @user.orders.empty? %>
-  <p>Order History:</p>
-  <% @user.orders.each do |u| %>
-    <%= link_to u.id, order_path(u.id) %>
+  <p>
+    <%= @user.name %>
+  </p>
+  <p>
+    <%= @user.email %>
+  </p>
+  <p>
+    <%= @user.address %>
+  </p>
+
+  <%= link_to "edit", edit_user_path %>
+
+</div>
+<div class="orderHistoryUser">
+  <% unless @user.orders.empty? %>
+    <p>Order History:</p>
+  <table>
+    <thead>
+      <th> Order Number </th>
+      <th> Date </th>
+      <th> Total Price </th>
+    </thead>
+    <% @orders.each do |u| %>
+
+      <tr>
+        <td>
+          <%= link_to "##{u.id.to_s.rjust(5, '0')}", order_path(u.id) %>
+        </td>
+        <td>
+          <%= u.created_at.localtime.strftime('%c') %>
+        </td>
+        <td>
+          <%= number_to_currency(u.total(u.line_items)) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @orders %>
+
+
   <% end %>
-<% end %>
+</div>

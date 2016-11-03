@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
     @items = Item.find_by_category(params[:category])
   end
 
-  def new33
+  def new
     @item = Item.new
   end
 

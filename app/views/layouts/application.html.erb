@@ -11,13 +11,13 @@
   <nav>
     <div class="navbar">
       <div class="navleft">
-        <%= link_to "Home", root_path, :class => 'nav' %>
-        <%= link_to "Items", items_path %>
-        
+        <%= link_to "HOME", root_path, :class => 'nav' %>
+        <%= link_to "ITEMS", items_path %>
+
         <% if @current_user.present? %>
-          <%= link_to "Profile", user_path(@current_user) %>
+          <%= link_to "PROFILE", user_path(@current_user) %>
           <% if @current_user.admin? %>
-            <%= link_to "Orders", orders_path %>
+            <%= link_to "ORDERS", orders_path %>
           <% end %>
         <% end %>
       </div>

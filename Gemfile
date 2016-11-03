@@ -27,6 +27,7 @@ gem 'bcrypt'
 gem 'underscore-rails'
 gem 'font-awesome-sass'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'will_paginate'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

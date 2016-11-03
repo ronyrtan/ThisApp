@@ -1,23 +1,30 @@
 <% if @current_user.present? && @current_user.admin? %>
-  <h1>Orders index</h1>
-  <table>
-    <thead>
-      <th>Order Number</th>
-      <th>Customer Name</th>
-      <th>Date</th>
-    </thead>
-    <% @orders.each do |o| %>
-    <tr>
-      <td>
-        <%= "##{o.id.to_s.rjust(5, '0')}" %>
-      </td>
-      <td>
-        <%= link_to o.user.name, order_path(o) %>
-      </td>
-      <td>
-        <%= o.created_at.localtime.strftime('%d/%m/%Y %-l:%M %p') %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
+
+<h3>Orders index</h3>
+
+  <div class=orderIndexTable>
+  <div class="orderHistoryHead">
+    <p>Orders Table</p>
+  </div>
+    <table >
+      <thead>
+        <th>Order Number</th>
+        <th>Customer Name</th>
+        <th>Date</th>
+      </thead>
+      <% @orders.each do |o| %>
+      <tr>
+        <td>
+          <%= link_to "##{o.id.to_s.rjust(5, '0')}", order_path(o.id) %>
+        </td>
+        <td>
+          <%= link_to o.user.name, order_path(o) %>
+        </td>
+        <td>
+          <%= o.created_at.localtime.strftime('%d/%m/%Y %-l:%M %p') %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 <% end %>

@@ -32,11 +32,11 @@
             <% else %>
               <%= link_to(raw('<i class="fa fa-heart-o" aria-hidden="true"></i>'), add_to_wishlist_path(i, type: "wish"), :method => 'POST') %>
             <% end %>
-          <% end %>
         </div>
         <div class="indexCartButton">
           <%= link_to 'Add to Cart', add_to_cart_path(i.id, 1), :remote => true, :class => 'addToCartButton' %>
         </div>
+        <% end %>
       </li>
     </div>
     <% end %>

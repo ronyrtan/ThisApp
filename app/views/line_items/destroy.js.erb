@@ -1,2 +1,3 @@
 $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
 $(".shoppingCart").html("<%= escape_javascript(render 'carts/shoppingCart') %>")
+$(".checkOutContainer").replaceWith("<%= escape_javascript(render 'carts/checkout') %>")

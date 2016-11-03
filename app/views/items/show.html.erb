@@ -24,7 +24,7 @@
     <span class="itemShowInfoHead">Category:</span><%= @item.category %>
   </p>
     <p>
-      <%= link_to 'Add to cart', add_to_cart_path(@item.id, 1), :remote => true, :class => 'addToCartButtonWL' %>
+      <%= link_to 'Add to Cart', add_to_cart_path(@item.id, 1), :remote => true, :class => 'addToCartButton WL' %>
     </p>
 
   <% if @current_user.present? && @current_user.admin? %>

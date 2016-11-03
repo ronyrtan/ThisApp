@@ -1,46 +1,79 @@
-<h3>User Profile</h3>
+<h3>USER PROFILE</h3>
 
 <div class="userProfileCont">
 
-  <p>
-    <%= @user.name %>
-  </p>
-  <p>
-    <%= @user.email %>
-  </p>
-  <p>
-    <%= @user.address %>
-  </p>
-
-  <%= link_to "edit", edit_user_path %>
-
+  <div class="orderProfileHead">
+    <p>Profile Information</p>
+  </div>
+  <div class="profileLabelCont">
+    <span class="profileLabel">Name:</span>
+    <span class="profileLabel">Email:</span>
+    <span class="profileLabel">Address:</span>
+  </div>
+  <div class="orderProfileInfo">
+    <p>
+      <%= @user.name %>
+    </p>
+    <p>
+      <%= @user.email %>
+    </p>
+    <p>
+      <%= @user.address %>
+    </p>
+    <%= link_to "Edit", edit_user_path, :class => "userEditButton" %>
+  </div>
 </div>
+
 <div class="orderHistoryUser">
   <% unless @user.orders.empty? %>
-    <p>Order History:</p>
-  <table>
-    <thead>
-      <th> Order Number </th>
-      <th> Date </th>
-      <th> Total Price </th>
-    </thead>
-    <% @orders.each do |u| %>
+    <div class="orderHistoryHead">
+      <p>Order History</p>
+    </div>
+  <div class=orderHistoryTable>
+    <table>
+      <thead>
+        <th> Order Number </th>
+        <th> Date </th>
+        <th> Total Price </th>
+      </thead>
+      <% @orders.each do |u| %>
+        <tr>
+          <td>
+            <%= link_to "##{u.id.to_s.rjust(5, '0')}", order_path(u.id) %>
+          </td>
+          <td>
+            <%= u.created_at.localtime.strftime('%c') %>
+          </td>
+          <td>
+            <%= number_to_currency(u.total(u.line_items)) %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="pagn">
+    <%= will_paginate @orders %>
+  </div>
+  <% end %>
+</div>
 
-      <tr>
-        <td>
-          <%= link_to "##{u.id.to_s.rjust(5, '0')}", order_path(u.id) %>
-        </td>
-        <td>
-          <%= u.created_at.localtime.strftime('%c') %>
-        </td>
-        <td>
-          <%= number_to_currency(u.total(u.line_items)) %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-  <%= will_paginate @orders %>
-
-
+<div class="wishListContainer">
+  <h3 class="wishListHeader">WISH LIST</h3>
+  <% @current_user.wishlist.items.each do |w| %>
+    <div class="wishListItem">
+      <p>
+        <%= image_tag w.image, :class => "wishListImage" %>
+      </p>
+      <div class="wishInfoCont">
+        <p>
+          <%= w.name %>
+        </p>
+        <p>
+          <%= number_to_currency(w.price) %>
+        </p>
+      </div>
+      <%= link_to('Remove From Wishlist', add_to_wishlist_path(w, type: "unwish"), :method => 'POST', :class => 'removeWL') %>
+      <%= button_to 'Add to Cart', add_to_cart_path(w), :class => 'addToCartButtonWL' %>
+    </div>
   <% end %>
 </div>

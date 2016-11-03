@@ -9,7 +9,7 @@
     <% @orders.each do |o| %>
     <tr>
       <td>
-        <%= o.id %>
+        <%= "##{o.id.to_s.rjust(5, '0')}" %>
       </td>
       <td>
         <%= link_to o.user.name, order_path(o) %>

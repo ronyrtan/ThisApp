@@ -104,6 +104,11 @@ nav a {
   border: 1px solid white;
 }
 
+.signInUpFormTitle {
+  padding-top: 10px;
+  font-weight: 200;
+}
+
 .search-box {
   display: inline-block;
   vertical-align: top;
@@ -220,7 +225,7 @@ body {
 
 
 .signInUpForm {
-  border: 1px solid lightblue;
+  border: 1px solid #626E60;
   border-radius: 3px;
   display: inline-block;
   height: 30px;
@@ -309,27 +314,169 @@ h3 {
 
 .userProfileCont {
   border: 1px solid gray;
-  padding: 10px;
-  width: 31%;
+  // padding: 10px;
+  width: 35%;
+  height: 220px;
   line-height: 2em;
   display: inline-block;
   margin-right: 8px;
   margin-left: 1px;
 }
 
+.orderProfileInfo {
+  padding: 10px;
+  width: 220px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.orderProfileHead {
+  border-bottom: 1px solid gray;
+  text-align: center;
+  height: 28px;
+  color: white;
+  background: #3c3c3c;
+}
+
 .orderHistoryUser {
   display: inline-block;
   vertical-align: top;
   border: 1px solid gray;
-  width: 65%;
+  // padding: 10px;
+  width: 63%;
+  height: 220px;
 }
 
 .orderHistoryUser td {
-  padding-right:25px;
+  width:30%;
+  line-height: 1.5em;
 }
 
+.orderHistoryUser p {
+  text-align: center;
+}
+
+.orderHistoryHead {
+  border-bottom: 1px solid gray;
+  padding: 5px 0;
+  color: white;
+  background: #3c3c3c;
+}
+
+.orderHistoryTable {
+  display: inline-block;
+  height: 150px;
+  width:100%;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: -10px;
+}
+
+.pagn {
+  position: relative;
+  display: inline-block;
+  top: 10px;
+  left: 35%;
+  width: 200px;
+  margin-top: -25px;
+}
+
+.profileLabelCont {
+  display: inline-block;
+  width: 75px;
+  vertical-align: top;
+  padding: 10px 0 0 10px;
+}
+
+.profileLabel {
+  width: 70px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.userEditButton {
+  border: 1px solid gray;
+  text-decoration: none;
+  background: #626E60;
+  color: white;
+  display: inline-block;
+  width: 110px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.wishListContainer {
+  width: 958px;
+  display: inline-block;
+  margin-top: 10px;
+  // border: 1px solid gray;
+  text-align: center;
+}
+
+.wishListItem {
+  line-height: 1.5em;
+  display: inline-block;
+  margin: 2px 33px;
+  width: 250px;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.wishListImage {
+  height: 313px;
+  width: 250px;
+}
+
+.addToCartButtonWL {
+  border: 1px solid #945D60;
+  display: inline-block;
+  height: 30px;
+  width: 250px;
+  color: white;
+  background: #945D60;
+  font-size: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.addToCartButtonWL:hover {
+  background: white;
+  color: #945D60;
+}
+
+.removeWL {
+  text-decoration: none;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #626E60;
+  display: inline-block;
+  height: 30px;
+  width: 248px;
+  color: #626E60;
+  background: white;
+  font-size: 15px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.removeWL:hover {
+  background: #626E60;
+  color: white;
+}
+
+.wishListHeader {
+  padding-top: 10px;
+  border-top: 1px solid gray;
+}
+
+.wishInfoCont {
+  height: 63px;
+}
 
 /*/// ITEMS PAGE ///*/
+
+
+
 
 
 
@@ -337,7 +484,7 @@ h3 {
   padding: 5px;
   width: 140px;
   height: 500px;
-  border: 1px solid lightgray;
+  // border: 1px solid lightgray;
   display: inline-block;
   position: relative;
   border-radius: 2px;
@@ -352,6 +499,13 @@ h3 {
   text-decoration: none;
   color: gray;
   line-height: 1.5em;
+  font-size: 14px;
+}
+
+.categorySearchContainer li {
+  border-bottom: 1px solid gray;
+  line-height: 2em;
+
 }
 
 .imageIndexContainer {
@@ -412,7 +566,7 @@ h3 {
 .indexCartButton {
   display: inline-block;
   position: relative;
-  margin-left: 45px;
+  right: -45px;
 }
 
 .wishListButton {
@@ -429,6 +583,10 @@ h3 {
   margin-bottom: 10px;
 }
 
+.itemAInfoCont {
+  height: 28px;
+}
+
 .indexItemPrice {
   display: inline-block;
 }
@@ -442,7 +600,11 @@ h3 {
   text-shadow: 0 0 5px pink;
 }
 
+
+
 /*/// CART ///*/
+
+
 
 .shoppingCart {
   width: 600px;
@@ -577,9 +739,7 @@ h3 {
 
 
 
-
 /*/// PROCESSING ///*/
-
 
 
 
@@ -597,8 +757,6 @@ h3 {
 .processingContainer .rowUnder {
   border-bottom: 1px solid lightgray;
   padding: 20px 0;
-
-
 }
 
 .processCN {
@@ -704,8 +862,4 @@ h3 {
 .orderSummaryContent img {
   height: 100px;
   width: 100px;
-}
-
-.cartLiContentSum {
-
 }

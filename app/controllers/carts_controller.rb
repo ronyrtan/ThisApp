@@ -15,7 +15,7 @@ class CartsController < ApplicationController
 
   def cart_processing
     @line_items = @cart.line_items
-    
+
   end
 
   def new

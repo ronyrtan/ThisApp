@@ -1,7 +1,7 @@
-<h3 id="front-page">Items Catalog</h3>
+<h3 id="front-page">ITEMS CATALOG</h3>
 
 <div class="categorySearchContainer">
-  <h4>Refine By: </h4>
+  <h4>CATEGORY: </h4>
   <ul>
     <% Item.pluck('category').uniq.each do |c| %>
       <li><%= link_to c, items_path(:category => c) %></li>
@@ -15,15 +15,16 @@
     <div class=itemInfoContainer>
       <li>
         <%= link_to (image_tag i.image), item_path(i), :alt => 'i.name', :class => 'imageIndexThumb' %>
-        <p>
-          <%= link_to i.name, item_path(i) %>
-        </p>
-        <div class="indexItemPrice">
+        <div class="itemAInfoCont">
           <p>
-            <%= number_to_currency(i.price) %>
+            <%= link_to i.name, item_path(i) %>
           </p>
         </div>
-
+          <div class="indexItemPrice">
+            <p>
+              <%= number_to_currency(i.price) %>
+            </p>
+          </div>
         <div class="wishListButton">
           <% if @current_user.present? %>
             <% if @wishlist.items.include?(i) %>
@@ -34,7 +35,7 @@
           <% end %>
         </div>
         <div class="indexCartButton">
-          <%= button_to 'Add to cart', add_to_cart_path(i), :class => 'addToCartButton' %>
+          <%= button_to 'Add to Cart', add_to_cart_path(i), :class => 'addToCartButton' %>
         </div>
       </li>
     </div>

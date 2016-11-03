@@ -44,11 +44,48 @@
   </nav>
   <div class="container">
     <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
-    <!-- <div class="shoppingCart">
-    </div> -->
 
     <%= yield %>
 
   </div>
+  <footer>
+    <div class="footerCont">
+      <div class="footerColOne">
+        <ul>
+          <li><h4>THIS.</h4></li>
+          <li>About Us</li>
+          <li>Terms & Conditions</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div class="footerColTwo">
+        <ul>
+          <li><h4>HELP & SUPPORT<h4></li>
+          <li>About Us</li>
+          <li>Terms & Conditions</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div class="footerColThree">
+        <ul>
+          <li><h4>FOLLOW US<h4></li>
+          <li><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</li>
+          <li><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</li>
+          <li><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</li>
+          <li><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</li>
+        </ul>
+      </div>
+      <div class="footerColFour">
+        <ul>
+          <li><h4>STAY IN TOUCH<h4></li>
+          <li>Subscribe to our newsletter and get a $10 voucher for your next purchase.</li>
+          <li>
+            <%= text_field_tag "", nil, :placeholder => "Email", :class => "subscribeEmail" %>
+            <button class="subscribeButton">SUBMIT</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

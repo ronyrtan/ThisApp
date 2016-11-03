@@ -1,0 +1,9 @@
+<div class="wishListButton">
+  <% if @current_user.present? %>
+    <% if @wishlist.items.include?(item) %>
+      <%= link_to(raw('<i class="fa fa-heart" aria-hidden="true"></i>'), add_to_wishlist_path(item, type: "unwish"), :method => 'POST') %>
+    <% else %>
+      <%= link_to(raw('<i class="fa fa-heart-o" aria-hidden="true"></i>'), add_to_wishlist_path(item, type: "wish"), :method => 'POST') %>
+    <% end %>
+  <% end %>
+</div>

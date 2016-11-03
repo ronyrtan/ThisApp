@@ -1,5 +1,6 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
 
 * {
   margin: 0;
@@ -214,6 +215,113 @@ h3#front-page {
 
 
 
+/*/// FOOTER ///*/
+
+footer {
+  margin-top: 20px;
+  width: 100%;
+  height: 250px;
+  background: #3c3c3c;
+  font-size: 13px;
+}
+
+.footerCont {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding-top: 20px;
+}
+
+.footerColOne {
+  width: 15%;
+  height: 190px;
+  display: inline-block;
+  vertical-align: top;
+  // border-right: 1px solid black;
+  color: lightgray;
+  padding: 20px;
+  line-height: 2em;
+  margin-left: 50px;
+}
+
+.footerColOne ul {
+  list-style: none;
+}
+
+.footerColTwo {
+  width: 15%;
+  height: 190px;
+  display: inline-block;
+  vertical-align: top;
+  // border-right: 1px solid black;
+  color: lightgray;
+  padding: 20px;
+  line-height: 2.2em;
+}
+
+.footerColTwo ul {
+  list-style: none;
+}
+
+.footerColThree {
+  width: 15%;
+  height: 190px;
+  display: inline-block;
+  vertical-align: top;
+  // border-right: 1px solid black;
+  color: lightgray;
+  padding: 20px;
+  line-height: 2.2em;
+}
+
+.footerColThree ul {
+  list-style: none;
+}
+
+footer h4 {
+  color: white;
+}
+
+.footerColFour {
+  width: 35%;
+  height: 190px;
+  display: inline-block;
+  vertical-align: top;
+  // border-right: 1px solid black;
+  color: lightgray;
+  padding: 20px;
+  line-height: 2.2em;
+}
+
+.footerColFour ul {
+  list-style: none;
+}
+
+.subscribeEmail {
+  border: none;
+  height: 34px;
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  width: 250px;
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.subscribeButton {
+  border: none;
+  height: 34px;
+  display: inline-block;
+  background: white;
+  padding: 10px;
+  line-height: 10px;
+  vertical-align: middle;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+footer li {
+  cursor: pointer;
+}
 
 /*/// HOME PAGE ///*/
 
@@ -221,16 +329,196 @@ h3#front-page {
 
 
 .homeHeader {
-  
+  display: inline-block;
+  height: 400px;
+  width: 100%;
+  // border: 1px solid black;
+  background: url(http://publicholidays.com.au/wp-content/uploads/2012/01/Australia_AustraliaDay_1920_800.jpg);
+  background-size: cover;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.headerDarken {
+  height:400px;
+  width: 100%;
+  background: rgba(0,0,0,0.1);
+}
+
+.homeHeader h2 {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  top: 100px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-family: 'Shrikhand', cursive;
+}
+
+.thisAsideHeader {
+  color: white;
+  display: inline-block;
+  position: relative;
+  top: 100px;
+  height: 40px;
+  width: 200px;
+  border: 2px solid white;
+  margin: 10px;
+  line-height: 40px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all .3s ease;
+}
+
+.thisAsideHeader:hover {
+  background-color: rgba(148,93,96,0.6);
+}
+
+.thisInHeader {
+  font-size: 60px;
+  font-family: 'Shrikhand', cursive;
+}
+
+
+.homeThumb {
+  display: inline-block;
+  height: 170px;
+  width: 100%;
+  // border: 1px solid black;
+}
+
+.homeThumbImg {
+  // border: 1px solid black;
+  display: inline-block;
+  position: relative;
+  width: 32%;
+  height: 100%;
+  margin-top: 10px;
+  // color: white;
+}
+
+.One {
+  background: url(https://s-media-cache-ak0.pinimg.com/originals/56/99/67/5699679c1f4ce361df4404bcbf5351dd.jpg);
+  background-size: cover;
+  margin-right: 14px;
+}
+
+.Two {
+  background: url(https://static1.squarespace.com/static/5163548be4b0b470bd200625/56f0abebc2ea518aa8d07ecf/56f0ac20555986265c6c5ef3/1458613322262/AA4A0292.jpg?format=1500w);
+  background-size: cover;
+  background-position: 30%;
+}
+
+.Three {
+  background: url(https://static1.squarespace.com/static/5163548be4b0b470bd200625/56f0abebc2ea518aa8d07ecf/56f0ac3d356fb017418b2d96/1458613362029/AA4A0354.jpg?format=1500w);
+  background-size: cover;
+  margin-left: 14px;
+}
+
+.thumbOne {
+  width: 100%;
+  height: 100%;
+  line-height: 170px;
+  text-align: center;
+  font-weight: 600;
+  transition: all .3s ease;
+  color: rgba(0,0,0,0);
+  cursor: pointer;
+}
+
+.thumbOne:hover  {
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+}
+
+.discoverDivider {
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  font-size: 25px;
+  vertical-align: top;
+  top: 35px;
+}
+
+.discoverDividerBlank {
+  display: inline-block;
+  position: relative;
+  border-bottom: 2px solid gray;
+  width: 29%;
+  height: 50px;
+}
+
+.discoverImageOne {
+  display: inline-block;
+  position: relative;
+  margin-top: 30px;
+  width: 288px;
+  height: 400px;
+  background: url(https://s-media-cache-ak0.pinimg.com/564x/35/ae/7d/35ae7da01b4166e1ce83c31b2b164b13.jpg);
+  background-size: cover;
+  margin-right: 13px;
+}
+
+.discoverImageTwo {
+  display: inline-block;
+  position: relative;
+  margin-top: 30px;
+  width: 653px;
+  height: 400px;
+  background: url(https://static1.squarespace.com/static/5163548be4b0b470bd200625/56f0abebc2ea518aa8d07ecf/56f0ac20555986265c6c5ef3/1458613322262/AA4A0292.jpg?format=1500w);
+  background-size: cover;
+  background-position: center;
+}
+
+.discoverImageThree {
+  display: inline-block;
+  position: relative;
+  margin-top: 30px;
+  width: 653px;
+  height: 400px;
+  background: url("http://img1.theiconic.com.au/SWudBV4UfHKt3t6ymbVLlmjJrbk=/fit-in/1600x1600/filters:fill(ffffff,1):quality(80):format(jpeg)/http%3A%2F%2Fmediaonsite.theiconic.com.au%2Fpage%2Fsw16%2Fweek4%2FTILE_5.png");
+  background-size: cover;
+  margin-top: 15px;
+}
+
+.discoverImageFour {
+  display: inline-block;
+  position: relative;
+  margin-top: 30px;
+  width: 288px;
+  height: 400px;
+  background: url('http://img1.theiconic.com.au/-6Mbb6U_irg1oYL4cTjXQXzIfwk=/fit-in/1600x1600/filters:fill(ffffff,1):quality(80):format(jpeg)/http%3A%2F%2Fmediaonsite.theiconic.com.au%2Fpage%2Fsw16%2Fweek4%2FTILE_6.png');
+  background-size: cover;
+  margin-left: 13px;
+  margin-top: 15px;
+}
+
+.shopTheLook {
+  padding: 10px;
+  color: white;
+  border: 4px solid white;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+  margin: 10px;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.shopTheLook:hover {
+  background: rgba(0,0,0,0.5);
 }
 
 
 
 
-
-
-
 /*/// USER PAGE ///*/
+
+
 
 
 

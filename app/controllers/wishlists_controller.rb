@@ -4,28 +4,17 @@ class WishlistsController < ApplicationController
   end
 
   def add_to_wishlist
-    item = Item.find params[:item_id]
+    @item = Item.find params[:item_id]
     type = params[:type]
 
-    # respond_to do |format|
-    #   if type == 'wish'
-    #     format.html { redirect_to items_path }
-    #     format.json { render :json => {:wish => false} }
-    #   else
-    #     format.html { redirect_to items_path }
-    #     format.json { render :json => {:wish => true} }
-    #   end
-    # end
-
-    if type == "wish"
-      @current_user.add_to_wishlist item
-      redirect_to :back
-    elsif type == "unwish"
-      # raise '#{item} DELETE'
-      @current_user.wishlist.items.delete(item)
-      redirect_to :back
-    else
-      redirect_to :back
+    respond_to do |format|
+      if type == 'wish'
+        @current_user.add_to_wishlist @item
+        format.js
+      else
+        @current_user.wishlist.items.delete(@item)
+        format.js
+      end
     end
   end
 
@@ -33,5 +22,11 @@ class WishlistsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find params[:id]
+    respond_to do |format|
+      @current_user.wishlist.items.delete(@item)
+      format.js
+    end
+
   end
 end

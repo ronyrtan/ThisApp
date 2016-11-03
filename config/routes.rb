@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'carts/processing' => 'carts#cart_processing'
   get 'order/complete' => 'orders#order_complete'
 
+
+  delete	'/wishlists/:id' =>	'wishlists#destroy', :as => 'wishlist_delete'
+
   resources :users
   resources :items
   resources :carts

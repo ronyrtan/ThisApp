@@ -60,7 +60,7 @@
 <div class="wishListContainer">
   <h3 class="wishListHeader">WISH LIST</h3>
   <% @current_user.wishlist.items.each do |w| %>
-    <div class="wishListItem">
+    <div class="wishListItem wishlist-item-<%= w.id %>">
       <p>
         <%= link_to (image_tag w.image), item_path(w), :class => "wishListImage" %>
       </p>
@@ -72,7 +72,7 @@
           <%= number_to_currency(w.price) %>
         </p>
       </div>
-      <%= link_to('Remove From Wishlist', add_to_wishlist_path(w, type: "unwish"), :method => 'POST', :class => 'removeWL') %>
+      <%= link_to('Remove From Wishlist', wishlist_delete_path(w, type: "unwish"), :method => 'DELETE', :class => "removeWL", :remote => true) %>
       <%= link_to 'Add to Cart', add_to_cart_path(w.id, 1), :remote => true, :class => 'addToCartButton WL' %>
     </div>
   <% end %>

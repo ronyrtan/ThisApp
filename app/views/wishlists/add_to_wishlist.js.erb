@@ -1,0 +1,12 @@
+if ($(".wl-item-<%= @item.id %> .fa-heart").length === 1) {
+    $(".wl-item-<%= @item.id %> i").removeClass('fa-heart');
+    $(".wl-item-<%= @item.id %> i").addClass('fa-heart-o');
+  }
+  else if($(".wl-item-<%= @item.id %> .fa-heart-o").length === 1) {
+    $(".wl-item-<%= @item.id %> i").removeClass('fa-heart-o');
+    $(".wl-item-<%= @item.id %> i").addClass('fa-heart');
+  }
+
+  else {
+    console.log("NO SUCH CLASS");
+}

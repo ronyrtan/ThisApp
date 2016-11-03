@@ -4,6 +4,6 @@
     <% @cart.line_items.each do |l| %>
       <% total_quantity += l.quantity %>
     <% end %>
-    <%= link_to "#{total_quantity unless @cart.nil?} Items in Cart ( #{number_to_currency(Cart.total(@cart.line_items)) unless @cart.nil?} )", carts_path, :class => 'itemsInCart' %>
+    <%= link_to "#{total_quantity unless @cart.nil?} Items in Cart ( #{number_to_currency(@cart.total_price) unless @cart.nil?} )", carts_path, :class => 'itemsInCart' %>
   </div>
 <% end %>

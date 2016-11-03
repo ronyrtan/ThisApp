@@ -35,7 +35,7 @@
           <% end %>
         </div>
         <div class="indexCartButton">
-          <%= button_to 'Add to Cart', add_to_cart_path(i), :class => 'addToCartButton' %>
+          <%= link_to 'Add to Cart', add_to_cart_path(i.id, 1), :remote => true, :class => 'addToCartButton' %>
         </div>
       </li>
     </div>

@@ -4,7 +4,7 @@
   <div>
     <%= form_for line_item, remote: true do |f| %>
     <div class="cartLiImage">
-      <%= image_tag item.image %>
+      <%= link_to (image_tag item.image), item_path(item) %>
     </div>
       <div class="cartLiContent">
         <div>

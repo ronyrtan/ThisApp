@@ -1,3 +1,16 @@
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+    .substr(1)
+        .split("&")
+        .forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+    });
+    return result;
+}
+
 $(document).ready(function() {
 
 console.log('in carts.js');
@@ -60,6 +73,37 @@ console.log('in carts.js');
   $('.processCN').on('keypress', function(e){
     e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
   })
+
+    // Ajax for cart
+  $('.addToCartButton').click(function () {
+    $.getJSON($(this).attr('href')).done(function(response){
+
+      $('.itemsInCart').html(response.total_qty +' Items in Cart ( $' + response.total_price +' )');
+
+      console.log(response);
+      // $('')
+    });
+  });
+
+    // $('.wishListButton a').click(function () {
+    //   var self = this;
+    // $.getJSON($(this).attr('href')).done(function(response){
+    //   // console.log(response);
+    //   console.log(self);
+    //   if(response.wish == true){
+    //     // var $unwishState = $('<i class="fa fa-heart-o" aria-hidden="true"></i>');
+    //     $(self).empty();
+    //     $(self).text($('<i class="fa fa-heart-o" aria-hidden="true"></i>'));
+    //   }
+    //   else {
+    //     // var $wishState = $('<i class="fa fa-heart" aria-hidden="true"></i>');
+    //     $(self).empty();
+    //     $(self).append($('<i class="fa fa-heart" aria-hidden="true"></i>'));
+    //   }
+    //   // $('')
+    // });
+    //
+    // });
 
 
 });

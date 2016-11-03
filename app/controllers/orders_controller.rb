@@ -34,7 +34,7 @@ class OrdersController < ApplicationController
 
   private
   def stripe_checkout #MY_CHANGES
-    @amount = Cart.total(@cart.line_items)
+    @amount = @cart.total_price
     #This will create a charge with stripe for $10
     #Save this charge in your DB for future reference
     charge = Stripe::Charge.create(

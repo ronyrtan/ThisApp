@@ -37,7 +37,7 @@
   <h3>Order Summary</h3>
 
   <div class="row rowUnder">
-    <%= label_tag '', 'Total to pay: '+number_to_currency(Cart.total(@cart.line_items))+'' , 'data-stripe' => 'amount' %>
+    <%= label_tag '', 'Total to pay: '+number_to_currency(@cart.total_price)+'' , 'data-stripe' => 'amount' %>
   </div>
 
   <%= render "placeorder" %>

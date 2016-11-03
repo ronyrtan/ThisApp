@@ -1,37 +1,29 @@
 <%= form_for(@item) do |f| %>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, :class => 'itemForm', :placeholder => 'name' %>
+    <%= f.text_field :name, :class => 'itemForm', :placeholder => 'name', :class => "signInUpForm" %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price, :class => 'itemForm', :placeholder => 'price' %>
+    <%= f.text_field :price, :class => 'itemForm', :placeholder => 'price', :class => "signInUpForm" %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, :class => 'itemForm', :placeholder => 'description' %>
+    <%= f.text_area :description, :class => 'itemForm', :placeholder => 'description', :class => "signInUpForm" %>
   </div>
   <div class="field">
-    <%= f.label :colour %><br>
-    <%= f.text_field :colour, :class => 'itemForm', :placeholder => 'colour' %>
+    <%= f.text_field :colour, :class => 'itemForm', :placeholder => 'colour', :class => "signInUpForm" %>
   </div>
   <div class="field">
-    <%= f.label :size %><br>
-    <%= f.text_field :size, :class => 'itemForm', :placeholder => 'size' %>
+    <%= f.text_field :size, :class => 'itemForm', :placeholder => 'size', :class => "signInUpForm" %>
   </div>
   <div class="field">
-    <%= f.label :brand %><br>
-    <%= f.text_field :brand, :class => 'itemForm', :placeholder => 'brand' %>
+    <%= f.text_field :brand, :class => 'itemForm', :placeholder => 'brand', :class => "signInUpForm" %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category, :class => 'itemForm', :placeholder => 'category' %>
+    <%= f.text_field :category, :class => 'itemForm', :placeholder => 'category', :class => "signInUpForm" %>
   </div>
   <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image, :class => 'itemForm', :placeholder => 'image' %>
+    <%= f.text_field :image, :class => 'itemForm', :placeholder => 'image', :class => "signInUpForm" %>
   </div>
   <div class="actions">
-    <%= f.submit :class => 'itemButton' %>
+    <%= f.submit :class => 'itemButton', :class => 'signInUpFormButton' %>
   </div>
 <% end %>

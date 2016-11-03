@@ -1,19 +1,36 @@
-<h1>Items show</h1>
-
-<%= image_tag @item.image %>
-<p>
-  <%= @item.name %>
-</p>
-<p>
-  <%= number_to_currency(@item.price) %>
-</p>
+<h3>Item show</h3>
+<div class="itemShowImg">
+  <%= image_tag @item.image %>
+</div>
+<div class="itemShowInfo">
   <p>
-    <%= button_to 'Add to cart', add_to_cart_path(@item), :class => 'addToCartButton' %>
+    <%= @item.name %>
   </p>
+  <p class="itemShowPrice">
+    <%= number_to_currency(@item.price) %>
+  </p>
+  <p>
+    <span class="itemShowInfoHead">Colour:</span><%= @item.colour %>
+  </p>
+  <p>
+    <span class="itemShowInfoHead">Description:</span><%= @item.description %>
+  </p>
+  <p>
+    <span class="itemShowInfoHead">Size:</span><%= @item.size %>
+  </p>
+  <p>
+    <span class="itemShowInfoHead">Brand:</span><%= @item.brand %>
+  <p>
+    <span class="itemShowInfoHead">Category:</span><%= @item.category %>
+  </p>
+    <p>
+      <%= link_to 'Add to cart', add_to_cart_path(@item.id, 1), :remote => true, :class => 'addToCartButtonWL' %>
+    </p>
 
-<% if @current_user.present? && @current_user.admin? %>
-  <div class="controller">
-    <%= link_to 'edit', edit_item_path%> |
-    <%= link_to 'destroy', @item, method: :delete %>
-  </div>
-<% end %>
+  <% if @current_user.present? && @current_user.admin? %>
+    <div class="controller">
+      <%= link_to 'edit', edit_item_path%> |
+      <%= link_to 'destroy', @item, method: :delete %>
+    </div>
+  <% end %>
+</div>

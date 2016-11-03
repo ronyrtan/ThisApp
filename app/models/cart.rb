@@ -15,11 +15,10 @@ class Cart < ActiveRecord::Base
 
   # before_save :update_total
 
-  def add_item(item_id)
+  def add_item(item_id, qty)
     line_item = line_items.where('item_id = ?', item_id).first
     if line_item
-      line_item.quantity += 1
-      # raise params
+      line_item.quantity = qty
       line_item.save
     else
       self.line_items << LineItem.new(item_id: item_id, quantity: 1)
@@ -27,7 +26,7 @@ class Cart < ActiveRecord::Base
     save
   end
 
-  def self.total(line_items)
+  def total_price
     sum = 0
     line_items.each do |l|
       sum += (l.item.price * l.quantity)

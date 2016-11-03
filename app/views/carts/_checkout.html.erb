@@ -1,9 +1,9 @@
 <div class="checkOutContainer">
   <div class="checkOutTotal">
-    <h3>TOTAL</h3>
+    <h4>TOTAL</h4>
   </div>
   <div class="checkOutSub">
-    <p>Sub-total: <%= number_to_currency(Cart.total(@cart.line_items)) %></p>
+    <p>Sub-total: <%= number_to_currency(@cart.total_price) %></p>
     <p>Shipping: Standard Shipping (Free) </p>
   </div>
   <div class="checkOutButton">
@@ -11,7 +11,7 @@
     <script
       src="https://checkout.stripe.com/checkout.js" class="stripe-button"
       data-key="pk_test_K0JzIUsN2Cc2kfstB87gy2Vs"
-      data-amount="<%= Cart.total(@cart.line_items) * 100 %>"
+      data-amount="<%= @cart.total_price * 100 %>"
       data-name="This"
       data-description="Widget"
       data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

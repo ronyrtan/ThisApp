@@ -2,7 +2,7 @@
   <% @line_items.each do |li| %>
   <div class="orderSummaryContent">
     <div class="cartLiImageSum">
-      <%= image_tag li.item.image %>
+      <%= link_to (image_tag li.item.image), item_path(li.item) %>
     </div>
       <div class="cartLiContentSum">
         <div>

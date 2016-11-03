@@ -6,6 +6,17 @@ class WishlistsController < ApplicationController
   def add_to_wishlist
     item = Item.find params[:item_id]
     type = params[:type]
+
+    # respond_to do |format|
+    #   if type == 'wish'
+    #     format.html { redirect_to items_path }
+    #     format.json { render :json => {:wish => false} }
+    #   else
+    #     format.html { redirect_to items_path }
+    #     format.json { render :json => {:wish => true} }
+    #   end
+    # end
+
     if type == "wish"
       @current_user.add_to_wishlist item
       redirect_to :back

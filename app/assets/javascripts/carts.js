@@ -1,16 +1,3 @@
-function findGetParameter(parameterName) {
-    var result = null,
-        tmp = [];
-    location.search
-    .substr(1)
-        .split("&")
-        .forEach(function (item) {
-        tmp = item.split("=");
-        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-    });
-    return result;
-}
-
 $(document).ready(function() {
 
 console.log('in carts.js');
@@ -74,13 +61,4 @@ console.log('in carts.js');
     e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
   })
 
-    // Ajax for cart
-  $('.addToCartButton').click(function () {
-    $.getJSON($(this).attr('href')).done(function(response){
-
-      $('.itemsInCart').html(response.total_qty +' Items in Cart ( $' + response.total_price +'.00 )');
-      $('.checkOutSub p').html('Sub-total: '+ response.total_price);
-
-    });
-  });
 });

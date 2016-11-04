@@ -10,17 +10,15 @@ class CartsController < ApplicationController
 
   def add_to_cart
     @cart.add_item(params[:item_id], params[:qty])
-    line_items = @cart.line_items.pluck('quantity').inject{|sum, n| sum + n }
-
+    @line_items_quantity = @cart.line_items.pluck('quantity').inject{|sum, n| sum + n }
+    
     respond_to do |format|
-      format.html { redirect_to items_path }
-      format.json { render :json => {total_price:  @cart.total_price, total_qty: line_items} }
+      format.js
     end
   end
 
   def cart_processing
     @line_items = @cart.line_items
-
   end
 
   def new

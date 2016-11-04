@@ -81,42 +81,6 @@ console.log('in carts.js');
       $('.itemsInCart').html(response.total_qty +' Items in Cart ( $' + response.total_price +'.00 )');
       $('.checkOutSub p').html('Sub-total: '+ response.total_price);
 
-      console.log(response);
-      // $('')
     });
   });
-
-
-    // Ajax for WishList
-  // $('.wishListButton a').click(function () {
-  //   var $i = $(this).find('i')
-  //   var $self = this
-  //   var $selfParent = $($self).parent();
-  //   $.getJSON($(this).attr('href')).done(function(response){
-  //     if(response.type === 'wish'){
-  //       var $a = $('<a>').attr({'href': '/add_to_wishlist/' + response.id + '?type=unwish', 'data-remote': true});
-  //       console.log('You WISH',response)
-  //       $i.removeClass('fa fa-heart-o');
-  //       $i.addClass('fa fa-heart');
-  //       $a.html('');
-  //       $a.html($i);
-  //       $selfParent.html($a);
-  //
-  //     }
-  //     else if (response.type === 'unwish') {
-  //       var $a = $('<a>').attr({'href': '/add_to_wishlist/' + response.id + '?type=wish', 'data-remote': true});
-  //       console.log("You are still unwishing");
-  //       $i.removeClass('fa fa-heart');
-  //       $i.addClass('fa fa-heart-o');
-  //       $a.html('');
-  //       $a.html($i);
-  //       $selfParent.html($a);
-  //     }
-  //
-  //     else {
-  //       alert("NO SUCH STATE");
-  //     }
-  //     // $('')
-  //   });
-  // });
 });

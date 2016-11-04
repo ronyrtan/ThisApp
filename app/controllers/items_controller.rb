@@ -27,6 +27,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new items_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload params[:file]
+      @item.image = req["public_id"]
+    end
+
     if @item.save
       redirect_to item_path(@item)
     else
@@ -40,6 +45,10 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find params[:id]
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      @item.image = req["public_id"]
+    end
     if @item.update(items_params)
       redirect_to item_path
     else

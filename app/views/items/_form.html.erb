@@ -1,4 +1,4 @@
-<%= form_for(@item) do |f| %>
+<%= form_for(@item, :html => {:multipart => true}) do |f| %>
   <div class="field">
     <%= f.text_field :name, :class => 'itemForm', :placeholder => 'name', :class => "signInUpForm" %>
   </div>
@@ -22,6 +22,9 @@
   </div>
   <div class="field">
     <%= f.text_field :image, :class => 'itemForm', :placeholder => 'image', :class => "signInUpForm" %>
+  </div>
+  <div class="field">
+    <%= f.cl_image_upload :image, :class => 'itemForm', :placeholder => 'image', :class => "signInUpForm" %>
   </div>
   <div class="actions">
     <%= f.submit :class => 'itemButton', :class => 'signInUpFormButton' %>

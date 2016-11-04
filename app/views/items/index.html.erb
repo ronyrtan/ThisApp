@@ -14,7 +14,7 @@
     <% @items.each do |i| %>
     <div class=itemInfoContainer>
       <li>
-        <%= link_to (image_tag i.image), item_path(i), :alt => 'i.name', :class => 'imageIndexThumb' %>
+        <%= link_to (cl_image_tag i.image), item_path(i), :alt => 'i.name', :class => 'imageIndexThumb' %>
         <div class="itemAInfoCont">
           <p>
             <%= link_to i.name, item_path(i) %>

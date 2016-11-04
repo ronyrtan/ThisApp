@@ -62,7 +62,7 @@
   <% @current_user.wishlist.items.each do |w| %>
     <div class="wishListItem wishlist-item-<%= w.id %>">
       <p>
-        <%= link_to (image_tag w.image), item_path(w), :class => "wishListImage" %>
+        <%= link_to (cl_image_tag w.image), item_path(w), :class => "wishListImage" %>
       </p>
       <div class="wishInfoCont">
         <p>
